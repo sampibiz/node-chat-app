@@ -42,10 +42,8 @@ socket.on('updateUserList', function (users) {
 
 jQuery( '.message-form' ).on( 'submit', function( e ) {
     e.preventDefault();
-    var from = 'Roni';
     var text = jQuery( '.user-message' ).val();
     socket.emit( 'createMessage', {
-        from: from,
         text: text
     }, function( msg ) {
         console.log( msg );
